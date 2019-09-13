@@ -33,9 +33,9 @@ function git_indicator {
     # hearts content 
    
 	if [[ $git_status =~ "working tree clean" ]]; then
-       echo -ne $GREEN clean # echo out something to indicate the state that you just tested for
+       echo -ne $GREEN
     elif [[ $git_status =~ "Changes to be committed" ]]; then
-      echo -ne $YELLOW waiting to commit changes to 
+      echo -ne $YELLOW 
     else
         echo -ne
     fi
