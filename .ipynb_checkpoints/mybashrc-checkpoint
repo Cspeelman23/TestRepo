@@ -35,7 +35,9 @@ function git_indicator {
 	if [[ $git_status =~ "working tree clean" ]]; then
        echo -ne $GREEN
     elif [[ $git_status =~ "Changes to be committed" ]]; then
-      echo -ne $YELLOW 
+      echo -ne $YELLOW
+	elif [[ $git_status =~ "Changes not staged" ]]; then
+      echo -ne $RED
     else
         echo -ne
     fi
