@@ -16,6 +16,7 @@ RED="\033[01;91m"
 GREEN="\033[01;92m"
 BLUE="\033[01;36m"
 YELLOW="\033[01;33m"
+PURPLE="\033[01;37m"
     
 function git_indicator {
     local git_status="$(git status 2> /dev/null)"  # redirect stderr to /dev/null -- we just need it in this variable
@@ -38,6 +39,8 @@ function git_indicator {
       echo -ne $YELLOW
 	elif [[ $git_status =~ "Changes not staged" ]]; then
       echo -ne $RED
+	elif [[ $git_status =~ "ahead of master" ]]; then
+      echo -ne $PURPLE
     else
         echo -ne
     fi
